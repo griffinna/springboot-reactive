@@ -2,6 +2,7 @@ package com.rio.hackingspringboot.reactive.repository;
 
 import com.rio.hackingspringboot.reactive.entity.Item;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+import reactor.core.publisher.Flux;
 
 /*
 * ReactiveCrudRepository<A, B>
@@ -19,5 +20,5 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 *   Some Method can receive Publisher type to parameter.
 * */
 public interface ItemRepository extends ReactiveCrudRepository<Item, String> {
-
+    Flux<Item> findByNameContaining(String partialName);
 }
