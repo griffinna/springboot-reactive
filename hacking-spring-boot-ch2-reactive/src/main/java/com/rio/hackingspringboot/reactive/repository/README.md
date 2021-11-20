@@ -51,6 +51,6 @@ public class Item {
 |findByLocation**Exists**(boolean e)|location 속성의 존재 여부 기준으로 데이터 질의|
 
 - Reference  
-[스프링데이터 JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords)
-[스프링데이터 아파치 카산드라](https://docs.spring.io/spring-data/cassandra/docs/current/reference/html/#repository-query-keywords)
+[스프링데이터 JPA](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords)  
+[스프링데이터 아파치 카산드라](https://docs.spring.io/spring-data/cassandra/docs/current/reference/html/#repository-query-keywords)  
 [스프링데이터 피보탈 젬파이어](https://docs.spring.io/spring-data/gemfire/docs/current/reference/html/#repository-query-keywords)
