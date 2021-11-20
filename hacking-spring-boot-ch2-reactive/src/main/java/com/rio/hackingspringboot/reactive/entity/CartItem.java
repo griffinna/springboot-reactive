@@ -35,4 +35,8 @@ public class CartItem {
                 ", quantity=" + quantity +
                 '}';
     }
+
+    public void increment() {
+        this.quantity++;
+    }
 }
