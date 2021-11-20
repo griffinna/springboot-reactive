@@ -7,9 +7,9 @@ public class CartItem {
 
     private CartItem(){}
 
-    public CartItem(Item item, int quantity) {
+    public CartItem(Item item) {
         this.item = item;
-        this.quantity = quantity;
+        this.quantity = 1;
     }
 
     public Item getItem() {
