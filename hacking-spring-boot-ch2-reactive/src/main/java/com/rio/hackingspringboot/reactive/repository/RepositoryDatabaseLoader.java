@@ -2,7 +2,6 @@ package com.rio.hackingspringboot.reactive.repository;
 
 import com.rio.hackingspringboot.reactive.entity.Item;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component  // 클래스가 Bean 으로 등록되게 함
