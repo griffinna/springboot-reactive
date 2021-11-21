@@ -9,19 +9,17 @@ public class Item {
 
     private @Id String id;  // @Id : ObjectId 필드로 지정 (_id)
     private String name;
-    private String descirption;
+    private String description;
+    private double price;
     private String distributorRegion;
     private Date releaseDate;
     private int availableUnits;
     private Point location;
     private boolean active;
 
-    private double price;
-
-    private Item() {}
-
-    public Item(String name, double price) {
+    public Item(String name, String description, double price) {
         this.name = name;
+        this.description = description;
         this.price = price;
     }
 
@@ -41,12 +39,12 @@ public class Item {
         this.name = name;
     }
 
-    public String getDescirption() {
-        return descirption;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescirption(String descirption) {
-        this.descirption = descirption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getDistributorRegion() {
@@ -102,7 +100,7 @@ public class Item {
         return "Item{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", descirption='" + descirption + '\'' +
+                ", description='" + description + '\'' +
                 ", distributorRegion='" + distributorRegion + '\'' +
                 ", releaseDate=" + releaseDate +
                 ", availableUnits=" + availableUnits +

@@ -12,8 +12,8 @@ public class RepositoryDatabaseLoader { // Blocking API 를 사용해서 데이�
     CommandLineRunner initialize(BlockingItemRepository repository) {
         // CommandLineRunner : application 시작 후 자동 실행되는 spring boot component (only have run method)
         return args -> {
-            repository.save(new Item("Alf alarm clock", 19.99));
-            repository.save(new Item("Smurf TV tray", 24.99));
+            repository.save(new Item("Alf alarm clock", "",19.99));
+            repository.save(new Item("Smurf TV tray", "",24.99));
         };
     }
 }
