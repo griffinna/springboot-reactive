@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.geo.Point;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Item {
 
@@ -18,6 +19,13 @@ public class Item {
     private boolean active;
 
     public Item(String name, String description, double price) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
+
+    public Item(String id, String name, String description, double price) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -96,16 +104,27 @@ public class Item {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return Double.compare(item.price, price) == 0 &&
+                Objects.equals(id, item.id) &&
+                Objects.equals(name, item.name) &&
+                Objects.equals(description, item.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, price);
+    }
+
+    @Override
     public String toString() {
         return "Item{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", distributorRegion='" + distributorRegion + '\'' +
-                ", releaseDate=" + releaseDate +
-                ", availableUnits=" + availableUnits +
-                ", location=" + location +
-                ", active=" + active +
                 ", price=" + price +
                 '}';
     }
