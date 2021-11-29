@@ -80,4 +80,20 @@ public class CartServiceUnitTest {
                 .verifyComplete();
 
     }
+
+    @Test
+    void alternativeWayToTest() {
+        StepVerifier.create(
+                cartService.addToCart("My Cart", "item1"))
+                .expectNextMatches(cart -> {
+                    assertThat(cart.getCartItems()).extracting(CartItem::getQuantity)
+                            .containsExactlyInAnyOrder(1);
+
+                    assertThat(cart.getCartItems()).extracting(CartItem::getItem)
+                            .containsExactly(new Item("item1", "TV tray", "Alf TV tray", 19.99));
+
+                    return true;
+                })
+                .verifyComplete();
+    }
 }
