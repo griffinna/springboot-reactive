@@ -18,6 +18,9 @@ public class Item {
     private Point location;
     private boolean active;
 
+    public Item() {
+    }
+
     public Item(String name, String description, double price) {
         this.name = name;
         this.description = description;
